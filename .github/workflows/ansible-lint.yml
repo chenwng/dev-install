@@ -22,7 +22,9 @@ jobs:
         # run: ansible-galaxy collection install -r requirements.yaml -p ./.ansible/collections
 
       - name: Prepare redhat-subscription
-        run: git clone --depth 1 --branch 1.3.0 https://opendev.org/openstack/ansible-role-redhat-subscription.git $HOME/.ansible/roles/redhat-subscription
+        run: |
+          git clone --depth 1 --branch 1.3.0 https://opendev.org/openstack/ansible-role-redhat-subscription.git $HOME/.ansible/roles/redhat-subscription
+          find $HOME/.ansible/roles/redhat-subscription
 
       - name: Run lint
         run: ansible-lint playbooks/**
