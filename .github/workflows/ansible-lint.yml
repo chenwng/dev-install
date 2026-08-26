@@ -22,5 +22,5 @@ jobs:
         # run: ansible-galaxy collection install -r requirements.yaml -p ./.ansible/collections
 
       - name: Run lint
-        run: ansible-lint playbooks/**
-        # run: export ANSIBLE_COLLECTIONS_PATH=./.ansible/collections; ansible-lint playbooks/**
+        # run: ansible-lint playbooks/**
+        run: export ANSIBLE_COLLECTIONS_PATH=$HOME/.ansible/collections; ansible-lint playbooks/**
