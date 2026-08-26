@@ -29,5 +29,5 @@ jobs:
           sed -i 's/is not usable./is not usable. {file_path}, {main}/' /home/runner/.local/lib/python3.12/site-packages/ansible/playbook/role/__init__.py
 
       - name: Run lint
-        run: ansible-lint playbooks/**
-        # run: export ANSIBLE_COLLECTIONS_PATH=$HOME/.ansible/collections; ansible-lint playbooks/**
+        # run: ansible-lint playbooks/**
+        run: export ANSIBLE_COLLECTIONS_PATH=$HOME/.ansible/collections; ansible-lint playbooks/**
