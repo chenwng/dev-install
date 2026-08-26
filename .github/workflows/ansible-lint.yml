@@ -21,11 +21,11 @@ jobs:
         run: ansible-galaxy collection install -r requirements.yaml
         # run: ansible-galaxy collection install -r requirements.yaml -p ./.ansible/collections
 
+      # find / -wholename "*site-packages/ansible/playbook/role/__init__.py"
       - name: Prepare redhat-subscription
         run: |
           git clone --depth 1 --branch 1.3.0 https://opendev.org/openstack/ansible-role-redhat-subscription.git $HOME/.ansible/roles/redhat-subscription
           find $HOME/.ansible/roles/redhat-subscription
-          find / -wholename "*site-packages/ansible/playbook/role/__init__.py"
           sed -i 's/is not usable./is not usable. {file_path}, {main}/' /home/runner/.local/lib/python3.12/site-packages/ansible/playbook/role/__init__.py
 
       - name: Run lint
