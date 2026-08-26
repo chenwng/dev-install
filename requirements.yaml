@@ -4,3 +4,4 @@ collections:
   - tripleo.operator
   - containers.podman
   - community.crypto
+  - ansible.utils
